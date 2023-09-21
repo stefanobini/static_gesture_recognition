@@ -1,2 +1,2 @@
-# static_gesture_recognition
-/mnt/sdc1/sbini/static_gesture_recognition
+# Static Gesture Recognition
+Framework for Static Gesture Recognition used for the development of a Gesture Recognition system in FELICE european project (Horizon 2020).)
