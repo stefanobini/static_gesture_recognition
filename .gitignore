@@ -1,0 +1,8 @@
+# General files
+*.zip
+*.rar
+*.jpg
+
+# All pycache directory and files
+**/__pycache__
+*.pyc
