@@ -12,8 +12,10 @@ from torch.profiler import profile, record_function, ProfilerActivity
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
+from commands import DEMO7_GESTURES
 
-class_name = ["Background", "Come here", "Go", "Start", "Stop", "Move To R", "Move To L", "Move Up", "Move Up", "Move Down", "Move Down", "Move Forward", "Move Backward", "NoGesture"]
+# TO FIX IT
+#class_name = ["Background", "Come here", "Go", "Start", "Stop", "Move To R", "Move To L", "Move Up", "Move Up", "Move Down", "Move Down", "Move Forward", "Move Backward", "NoGesture"]
 
 
 @torch.inference_mode()
@@ -26,10 +28,10 @@ def test(model, data_loader, device, dataset_name):
     metric_logger = utils.MetricLogger(delimiter="  ")
     header = "Test:"
        
-    accuracy = Accuracy(num_classes=14, average= "micro")
-    accuracy_weighted = Accuracy(num_classes=14, average= "macro")
-    accuracy_for_classes = Accuracy(num_classes=14, average= "none")
-    confmat = ConfusionMatrix(num_classes=14)
+    accuracy = Accuracy(num_classes=len(DEMO7_GESTURES), average= "micro")
+    accuracy_weighted = Accuracy(num_classes=len(DEMO7_GESTURES), average= "macro")
+    accuracy_for_classes = Accuracy(num_classes=len(DEMO7_GESTURES), average= "none")
+    confmat = ConfusionMatrix(num_classes=len(DEMO7_GESTURES))
 
 
     

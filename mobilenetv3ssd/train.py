@@ -1,5 +1,5 @@
 """
-python3 train.py --configuration demo7_conf
+python3 train.py --configuration demo7_conf 2<&1 | tee training_log.txt
 """
 
 import datetime, sys, os, argparse, colorama
@@ -14,6 +14,7 @@ from HagridDataset import HagridDataset
 from CustomDataset import CustomDataset
 import matplotlib.patches as patches
 from torch.utils.tensorboard import SummaryWriter
+from commands import DEMO7_GESTURES
 
 ########################
 # Acquiring parameters #
@@ -58,7 +59,7 @@ def main():
     #model = mobilenetv3ssd(weights= None, progress = True,  trainable_backbone_layers = 0, num_classes=19)   #29 + 1 background
     #model = mobilenetv3ssd(weights= None, progress = True, weights_backbone="MobileNet_V3_Large_Weights.IMAGENET1K_V2",   num_classes = 20)   #29 + 1 background
     #backbone = torch.load("saves/bakcbone_hagrid/backbone.pt")
-    model = mobilenetv3ssd(weights= None, progress = True, num_classes=14)
+    model = mobilenetv3ssd(weights= None, progress=True, num_classes=len(DEMO7_GESTURES))
     device = torch.device(settings.device) if torch.cuda.is_available() else torch.device('cpu')
     
     #model.backbone.load_state_dict(backbone["model.backbone.weights"])

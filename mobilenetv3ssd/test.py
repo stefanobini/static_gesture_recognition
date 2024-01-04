@@ -29,8 +29,10 @@ def main():
     
     #best checkpoint SSD only custom epoch 15 : "saves/models/last_dance/15ep_2022_09_16_17_55_finetuning_hagrid_model.pt"
     #best checkpoint DEPTH SSD only custom epoch 15 : "saves/models/depth_noHagrid/15ep_2022_09_19_12_55_finetuning_custom_depth_model.pt"
-    checkpoint = torch.load("saves/models/last_dance/15ep_2022_09_16_17_55_finetuning_hagrid_model.pt")
+    #checkpoint = torch.load("saves/models/last_dance/15ep_2022_09_16_17_55_finetuning_hagrid_model.pt")
     #checkpoint = torch.load("saves/models/depth_noHagrid/15ep_2022_09_19_12_55_finetuning_custom_depth_model.pt")
+
+    checkpoint = torch.load("static_gesture_recognition/mobilenetv3ssd/experiments/FELICE/demo7/rgb.pt")
     
     
     #PRETRAINED

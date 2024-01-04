@@ -4,6 +4,7 @@ import numpy as np
 import torch
 from PIL import Image
 import csv
+from settings.demo7_conf import settings
 
 class CustomDataset(torch.utils.data.Dataset):
     class_names = ["call", "dislike", "fist", "four", "like", "mute", "ok", "one", "palm", "peace", "peace_inverted", "rock", "stop", "stop_inverted", "three", "three2", "two_up", "two_up_inverted", "no_gesture"]
@@ -149,8 +150,10 @@ class CustomDataset(torch.utils.data.Dataset):
       return len(list(self.csv_reader)) - 1
 
 
-
-""" dataset = CustomDataset(mode="train")
+#"""
+#dataset = CustomDataset(settings=settings, mode="train")
+dataset = CustomDataset(settings=settings, mode="train", distance=None, transforms=None)
 id = randrange(3072, 3286)
 id = 65860
-print(dataset[id]) """
+print(dataset[id][0]._size)
+#"""

@@ -13,6 +13,7 @@ import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
 from ensemble_boxes import weighted_boxes_fusion
+from commands import DEMO7_GESTURES
 
 
 
@@ -102,10 +103,10 @@ def weighted_fusion (dataset):
     count = 0
     MAX_BBOX_DETECTABLE = 1
     BBOX_THRESHOLD = 0.2
-    accuracy = Accuracy(num_classes=14, average= "micro")
-    accuracy_weighted = Accuracy(num_classes=14, average= "macro")
-    accuracy_for_classes = Accuracy(num_classes=14, average= "none")
-    confmat = ConfusionMatrix(num_classes=14)
+    accuracy = Accuracy(num_classes=len(DEMO7_GESTURES), average= "micro")
+    accuracy_weighted = Accuracy(num_classes=len(DEMO7_GESTURES), average= "macro")
+    accuracy_for_classes = Accuracy(num_classes=len(DEMO7_GESTURES), average= "none")
+    confmat = ConfusionMatrix(num_classes=len(DEMO7_GESTURES))
 
     assert len(dataset) == len(rgb) == len(depth)
 

@@ -16,7 +16,7 @@ settings.device:str = 'cuda:0'
 
 settings.training.batch_size = 32
 settings.validation.batch_size = 32
-settings.training.epochs:int = 20
+settings.training.epochs:int = 100
 settings.training.lr = 0.001
 settings.training.momentum = 0.9
 settings.training.weight_decay = 0.0005
